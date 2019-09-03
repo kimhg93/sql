@@ -63,7 +63,7 @@ order by char_length(title) desc;
 -- 현재 Enginner 직책의 사원은 총 몇 명입니까?
 select 	count(*)
 from	titles
-where	title like '%Engineer%' and to_date > now();
+where	title like 'Engineer' and to_date > now();
 
 -- 문제11
 -- 사번이 13250(Zeydy)인 지원이 직책 변경 상황을 시간순으로 출력해보세요.
