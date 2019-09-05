@@ -20,12 +20,12 @@ select a.emp_no,
    and b.to_date = '9999-01-01'
    and c.to_date = '9999-01-01'
    and (c.salary, b.dept_no) = any (select max(c.salary), b.dept_no
-								      from employees a, dept_emp b, salaries c
-								     where a.emp_no = b.emp_no
+                                      from employees a, dept_emp b, salaries c
+                                     where a.emp_no = b.emp_no
                                        and a.emp_no = c.emp_no
                                        and b.to_date = '9999-01-01'
                                        and c.to_date = '9999-01-01'
-							      group by b.dept_no)
+                                  group by b.dept_no)
 order by c.salary desc;
 
 
