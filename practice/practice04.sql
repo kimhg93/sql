@@ -28,14 +28,6 @@ select a.emp_no,
                                   group by b.dept_no)
 order by c.salary desc;
 
-
-select max(c.salary), b.dept_no
-								      from employees a, dept_emp b, salaries c
-								     where a.emp_no = b.emp_no
-                                       and a.emp_no = c.emp_no
-                                       and b.to_date = '9999-01-01'
-                                       and c.to_date = '9999-01-01'
-							      group by b.dept_no;
 -- 문제3
 -- 현재, 자신의 부서 평균 급여보다 연봉(salary)이 많은 사원의 사번, 이름과 연봉을 조회하세요
   select b.dept_no, avg(c.salary)
